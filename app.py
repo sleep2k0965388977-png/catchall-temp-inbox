@@ -21,9 +21,11 @@ if sys.platform == 'win32':
     except Exception:
         pass
 
-# Trên Render, dùng /data để lưu trữ persistent (nếu có Disk)
-# Nếu không có Disk, dùng thư mục hiện tại
-DATA_DIR = os.environ.get("DATA_DIR", ".")
+# Trên Vercel dùng /tmp, trên Render dùng /data, local dùng thư mục hiện tại
+if os.environ.get("VERCEL"):
+    DATA_DIR = "/tmp"
+else:
+    DATA_DIR = os.environ.get("DATA_DIR", ".")
 DB_PATH = os.path.join(DATA_DIR, "emails.db")
 
 # Thời gian sống mặc định của email (giờ)
