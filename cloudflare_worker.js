@@ -8,7 +8,7 @@
  */
 
 // Địa chỉ Webhook nhận email (Thay thế bằng domain / ngrok / Cloudflare Tunnel của bạn)
-const WEBHOOK_URL = "https://your-dashboard-domain.com/api/webhook/email";
+const WEBHOOK_URL = "https://catchall-temp-inbox.vercel.app/api/webhook/email";
 
 // Thư viện phân tích email đơn giản
 import PostalMime from 'postal-mime';
